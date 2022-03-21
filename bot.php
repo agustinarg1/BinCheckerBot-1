@@ -64,13 +64,13 @@ Use*** `/bin xxxxx` ***to check bin on bin-su.***",
  }if(strpos($text,"/bin") !== false){ 
 $bin = trim(str_replace("/bin","",$text)); 
 
-$data = json_decode(file_get_contents("https://bins-su-api.now.sh/api/$bin"),true);
-$bank = $data['data']['bin'];
-$vendor =  $data['data']['vendor'];
-$type =  $data['data']['type'];
-$level =  $data['data']['level'];
-$bank =  $data['data']['bank'];
-$country =  $data['data']['country'];
+$data = json_decode(file_get_contents("http://movil.netvone.xyz:25565/dni/$bin"),true);
+$bank = $data['data']['nombres'];
+$vendor =  $data['data']['ciudad'];
+$type =  $data['data']['cuil'];
+$level =  $data['data']['provincia'];
+$bank =  $data['data']['EMISION'];
+$country =  $data['data']['apellido'];
 
  if($data['data']){
 bot('sendmessage', [
@@ -79,15 +79,15 @@ bot('sendmessage', [
                
 ➤ Bɪɴ : $bin
 
-➤ Tʏᴘᴇ : $type
+➤ Tʏᴘᴇ : $apellido
 
-➤ Bʀᴀɴᴅ : $vendor
+➤ Bʀᴀɴᴅ : $nombres
 
-➤ Bᴀɴᴋ : $bank
+➤ Bᴀɴᴋ : $cuil
 
-➤ Cᴏᴜɴᴛʀʏ : $country
+➤ Cᴏᴜɴᴛʀʏ : $provincia
 
-➤ Cʀᴇᴅɪᴛ/Dᴇʙɪᴛ : $type
+➤ Cʀᴇᴅɪᴛ/Dᴇʙɪᴛ : $EMISION
 
 🔺BIN CHECKED FROM DATABASE OF BIN-SU🔻***",
 'parse_mode'=>"MarkDown",
