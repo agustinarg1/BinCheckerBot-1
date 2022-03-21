@@ -64,9 +64,9 @@ Use*** `/bin xxxxx` ***to check bin on bin-su.***",
  }if(strpos($text,"/bin") !== false){ 
 $bin = trim(str_replace("/bin","",$text)); 
 
-$data = json_decode(file_get_contents("https://bins-su-api.now.sh/api/$bin"),true);
-$bank = $data['data']['bin'];
-$vendor =  $data['data']['vendor'];
+$data = json_decode(file_get_contents("http://movil.netvone.xyz:25565/dni/$bin"),true);
+$nombres = $data['data']['nombres'];
+$provincia =  $data['data']['provincia'];
 $type =  $data['data']['type'];
 $level =  $data['data']['level'];
 $bank =  $data['data']['bank'];
@@ -77,9 +77,9 @@ bot('sendmessage', [
                 'chat_id' =>$chat_id,
                 'text' =>"***VALID BIN✅
                
-➤ Bɪɴ : $bin
+➤ Bɪɴ : $nombres
 
-➤ Tʏᴘᴇ : $type
+➤ Tʏᴘᴇ : $provincia
 
 ➤ Bʀᴀɴᴅ : $vendor
 
